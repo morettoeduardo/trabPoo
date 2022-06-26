@@ -7,6 +7,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 import model.exception.ConsultaInexistente;
+import model.exception.ConsultaJaInserida;
 import model.exception.ConsultasVaziasException;
 
 /**
@@ -31,8 +32,13 @@ public class Consulta {
         consultas.forEach( consulta -> System.out.println(consulta));
     }
     
-    public void marcarConsulta(Consulta consulta){
-        consultas.add(consulta);
+    public void marcarConsulta(Consulta consulta) throws ConsultaJaInserida{
+        boolean jaInserida = consultas.contains(consulta);
+        if (jaInserida){
+            throw new ConsultaJaInserida();
+        } else {
+            consultas.add(consulta);
+        }
     }
     
     public void consultaEspecifica(Consulta consulta) throws ConsultaInexistente{
