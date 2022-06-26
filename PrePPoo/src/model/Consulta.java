@@ -6,6 +6,8 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import model.exception.ConsultaInexistente;
+import model.exception.ConsultasVaziasException;
 
 /**
  *
@@ -33,19 +35,19 @@ public class Consulta {
         consultas.add(consulta);
     }
     
-    public void consultaEspecifica(Consulta consulta){
+    public void consultaEspecifica(Consulta consulta) throws ConsultaInexistente{
         boolean existeConsulta = consultas.contains(consulta);
         if (existeConsulta){
             System.out.println(consulta);
         } else {
-            System.out.println("Consulta não existe");
+            throw new ConsultaInexistente();
         }
     }
     
-    public void desmarcarConsulta(int index){
+    public void desmarcarConsulta(int index) throws ConsultasVaziasException{
         boolean estaVazia = consultas.isEmpty();
         if(estaVazia){
-            System.out.println("Nao ha consultas marcadas");
+            throw new ConsultasVaziasException();
         } else{
             consultas.remove(index);
         }        
@@ -70,8 +72,5 @@ public class Consulta {
     public String getPaciente() {
         return paciente;
     }
-    
-    
-    
     
 }
