@@ -33,12 +33,15 @@ public class testClinica {
         c1.marcarConsulta(c1);
         c1.marcarConsulta(c2);
         c1.verConsultas();
-//        c1.desmarcarConsulta(1);
-//        c1.desmarcarConsulta(0);
-//        c1.verConsultas();
-//        m1.fichaPaciente(p1);
+        c1.desmarcarConsulta(1);
+        c1.desmarcarConsulta(0);
+        c1.verConsultas();
+        m1.fichaPaciente(p1);
         
-        c1.consultaEspecifica(c2);
+        //c1.consultaEspecifica(c2);
+        
+        System.out.println(p1.apresentarse());
+        m1.prescreverReceita();
     }
     
 }

@@ -22,7 +22,4 @@ public class Medico extends Pessoa{
         System.out.println("Receita...");
     }
     
-    
-    
-    
 }

@@ -20,4 +20,8 @@ public class Paciente extends Pessoa{
     public void contarProblema(){
         System.out.println(this.problema);
     }
+    
+    
+
+
 }

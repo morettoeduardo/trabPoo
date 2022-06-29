@@ -8,7 +8,7 @@ package model;
  *
  * @author eduar
  */
-public abstract class Pessoa {
+public abstract class Pessoa implements IPessoa{
     private String nome;
     private int idade;
     private char sexo;
@@ -32,9 +32,8 @@ public abstract class Pessoa {
     }
 
     @Override
-    public String toString() {
+    public String apresentarse() {
         return "Nome: " + this.nome + "  --  Idade: " + this.idade + "  --  Sexo: " + this.sexo;
     }
-    
     
 }
